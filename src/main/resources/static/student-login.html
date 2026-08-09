@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>EduTrack | Student Login</title>
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="student-login.css">
+
+</head>
+
+<body>
+
+    <!-- Decorative Background -->
+
+    <div class="bg-circle circle1"></div>
+    <div class="bg-circle circle2"></div>
+    <div class="bg-circle circle3"></div>
+
+    <div class="grid-left"></div>
+    <div class="grid-right"></div>
+
+    <!-- Login Card -->
+
+    <div class="login-card">
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+            </div>
+
+            <h1>Student Portal</h1>
+
+            <p>
+
+                Login to access your attendance,
+                courses and fee details.
+
+            </p>
+
+        </div>
+
+
+        <!-- Login Form -->
+
+        <form id="studentLoginForm">
+
+            <!-- Email -->
+
+            <div class="input-group">
+
+                <label>Email Address</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input type="email"
+                           id="email"
+                           placeholder="Enter your email"
+                           required>
+
+                </div>
+
+            </div>
+
+
+            <!-- Password -->
+
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input type="password"
+                           id="password"
+                           placeholder="Enter your password"
+                           required>
+
+                    <i class="fa-solid fa-eye"
+                       id="togglePassword"></i>
+
+                </div>
+
+            </div>
+
+
+            <!-- Error -->
+
+            <p id="errorMessage"></p>
+
+
+            <!-- Button -->
+
+            <button type="submit"
+                    id="loginBtn">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Student Login
+
+            </button>
+
+        </form>
+
+
+        <!-- Divider -->
+
+        <div class="divider">
+
+            <span>EduTrack</span>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <div class="footer">
+
+            <a href="landing.html">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="student-login.js"></script>
+
+</body>
+
+</html>

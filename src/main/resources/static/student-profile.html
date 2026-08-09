@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>EduTrack | My Profile</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="student-profile.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="background-circle circle-one"></div>
+    <div class="background-circle circle-two"></div>
+
+    <div class="page-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>EduTrack</h2>
+
+                    <span>Student Portal</span>
+
+                </div>
+
+            </div>
+
+
+<nav class="sidebar-menu">
+
+    <a href="student-dashboard.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>Dashboard</span>
+
+    </a>
+
+    <a href="student-profile.html"
+       class="active">
+
+        <i class="fa-solid fa-user"></i>
+
+        <span>My Profile</span>
+
+    </a>
+
+    <a href="student-attendance.html">
+
+        <i class="fa-solid fa-calendar-check"></i>
+
+        <span>Attendance</span>
+
+    </a>
+
+    <a href="student-fee.html">
+
+        <i class="fa-solid fa-wallet"></i>
+
+        <span>Fee Details</span>
+
+    </a>
+
+</nav>
+
+            <button id="logoutBtn"
+                    class="logout-btn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+            <!-- Top Header -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <p class="page-label">
+                        STUDENT PORTAL
+                    </p>
+
+                    <h1>
+                        My Profile
+                    </h1>
+
+                    <p class="welcome-text">
+                        View your personal and academic information.
+                    </p>
+
+                </div>
+
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong id="topStudentName">
+                            Student
+                        </strong>
+
+                        <span id="topStudentCourse">
+                            Course
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================
+                 PROFILE HERO
+            ========================== -->
+
+            <section class="profile-hero">
+
+                <div class="profile-avatar-large">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <div class="profile-heading">
+
+                    <span class="profile-badge">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Active Student
+
+                    </span>
+
+                    <h2 id="studentName">
+                        Student Name
+                    </h2>
+
+                    <p id="studentCourse">
+                        Course
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 INFORMATION GRID
+            ========================== -->
+
+            <section class="information-grid">
+
+                <!-- Personal Information -->
+
+                <div class="profile-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon blue">
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>Personal Information</h3>
+
+                            <p>Your basic account details</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="details-list">
+
+                        <div class="detail-item">
+
+                            <div class="detail-icon">
+
+                                <i class="fa-solid fa-id-card"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>Student ID</span>
+
+                                <strong id="studentId">
+                                    --
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <div class="detail-icon">
+
+                                <i class="fa-solid fa-user"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>Full Name</span>
+
+                                <strong id="studentFullName">
+                                    --
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <div class="detail-icon">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>Email Address</span>
+
+                                <strong id="studentEmail">
+                                    --
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Academic Information -->
+
+                <div class="profile-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon purple">
+
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>Academic Information</h3>
+
+                            <p>Your current academic details</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="details-list">
+
+                        <div class="detail-item">
+
+                            <div class="detail-icon">
+
+                                <i class="fa-solid fa-book-open"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>Course / Degree</span>
+
+                                <strong id="studentCourseDetail">
+                                    --
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <div class="detail-icon">
+
+                                <i class="fa-solid fa-calendar"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>Student Status</span>
+
+                                <strong class="status-active">
+                                    Active
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <div class="detail-icon">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>Account</span>
+
+                                <strong class="status-active">
+                                    Verified
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 QUICK SUMMARY
+            ========================== -->
+
+            <section class="summary-card">
+
+                <div class="summary-header">
+
+                    <div>
+
+                        <h3>Account Summary</h3>
+
+                        <p>
+                            Your EduTrack student account
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-id-badge"></i>
+
+                </div>
+
+
+                <div class="summary-items">
+
+                    <div>
+
+                        <span>Student ID</span>
+
+                        <strong id="summaryStudentId">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Course</span>
+
+                        <strong id="summaryCourse">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Email</span>
+
+                        <strong id="summaryEmail">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="student-profile.js"></script>
+
+</body>
+
+</html>

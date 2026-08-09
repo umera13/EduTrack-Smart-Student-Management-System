@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduTrack | Login</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="admin-login.css">
+
+</head>
+
+<body>
+
+    <!-- Background Blobs -->
+
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+
+    <!-- Login Card -->
+
+    <div class="login-container">
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <h1>EduTrack</h1>
+
+        </div>
+
+        <p class="subtitle">
+            Sign in to continue
+        </p>
+
+        <!-- Login Form -->
+
+        <form id="loginForm">
+
+            <!-- Email -->
+
+            <div class="input-group">
+
+                <label>Email</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+            </div>
+
+            <!-- Password -->
+
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required>
+
+                    <i
+                        class="fa-solid fa-eye"
+                        id="togglePassword"></i>
+
+                </div>
+
+            </div>
+
+            <!-- Error Message -->
+
+            <p id="errorMessage"></p>
+
+            <!-- Login Button -->
+
+            <button
+                type="submit"
+                id="loginBtn">
+
+                Login
+
+            </button>
+
+        </form>
+
+        <!-- Footer -->
+
+        <div class="footer-links">
+
+            <a href="landing.html">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="admin-login.js"></script>
+
+</body>
+
+</html>

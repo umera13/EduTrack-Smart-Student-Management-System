@@ -1,0 +1,1131 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f8ff;
+    color: #253858;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background-circle {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.circle-one {
+    width: 420px;
+    height: 420px;
+    background: rgba(73, 139, 255, 0.10);
+    top: -180px;
+    right: -120px;
+}
+
+.circle-two {
+    width: 320px;
+    height: 320px;
+    background: rgba(91, 174, 255, 0.08);
+    bottom: -150px;
+    left: 260px;
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.page-layout {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+    width: 255px;
+    min-width: 255px;
+    height: 100vh;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-right: 1px solid #e5ecf7;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 18px 22px;
+
+    overflow-y: auto;
+
+    box-shadow: 8px 0 30px rgba(35, 88, 150, 0.04);
+}
+
+
+/* Sidebar scrollbar */
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #cddcf3;
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 8px 30px;
+}
+
+.logo-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #2878ff,
+        #68a7ff
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 8px 20px rgba(40, 120, 255, 0.20);
+}
+
+.sidebar-logo h2 {
+    color: #1e5fca;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.sidebar-logo span {
+    color: #91a0b7;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =====================================================
+   SIDEBAR MENU
+===================================================== */
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    flex: 1;
+}
+
+.sidebar-menu a {
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 16px;
+
+    border-radius: 13px;
+
+    color: #687a96;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+}
+
+.sidebar-menu a i {
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+.sidebar-menu a:hover {
+    background: #edf5ff;
+
+    color: #2878ff;
+
+    transform: translateX(2px);
+}
+
+.sidebar-menu a.active {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #2878ff,
+        #5799ff
+    );
+
+    box-shadow:
+        0 8px 20px rgba(40, 120, 255, 0.20);
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+.logout-btn {
+    width: 100%;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: #fff1f1;
+
+    color: #e15c5c;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 16px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    margin-top: 18px;
+}
+
+.logout-btn i {
+    width: 20px;
+
+    text-align: center;
+}
+
+.logout-btn:hover {
+    background: #ffe3e3;
+
+    color: #d94141;
+
+    transform: translateX(2px);
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+    flex: 1;
+
+    height: 100vh;
+
+    overflow-y: auto;
+
+    padding: 32px 42px 45px;
+}
+
+
+/* Main scrollbar */
+
+.main-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background: #cbdaf0;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+
+.topbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.page-label {
+    color: #4c8df7;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 5px;
+}
+
+.topbar h1 {
+    color: #203557;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+.welcome-text {
+    color: #8290a7;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+
+/* =====================================================
+   TOP PROFILE
+===================================================== */
+
+.top-profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 8px 14px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border: 1px solid #e5ecf7;
+
+    border-radius: 15px;
+}
+
+.top-avatar {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #eaf3ff;
+
+    color: #3982ed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+}
+
+.top-profile strong {
+    display: block;
+
+    color: #304462;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.top-profile span {
+    display: block;
+
+    color: #91a0b7;
+
+    font-size: 10px;
+
+    margin-top: 2px;
+}
+
+
+/* =====================================================
+   ATTENDANCE SUMMARY
+===================================================== */
+
+.attendance-summary {
+    display: grid;
+
+    grid-template-columns: 1.45fr 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   PERCENTAGE CARD
+===================================================== */
+
+.percentage-card {
+    min-height: 245px;
+
+    background: linear-gradient(
+        135deg,
+        #2878ff,
+        #579aff
+    );
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 18px 40px rgba(40, 120, 255, 0.18);
+}
+
+.percentage-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    right: -90px;
+    top: -100px;
+}
+
+
+/* =====================================================
+   PERCENTAGE CIRCLE
+===================================================== */
+
+.percentage-circle {
+    width: 155px;
+    height: 155px;
+
+    min-width: 155px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            white 0deg,
+            white 331deg,
+            rgba(255,255,255,0.18) 331deg,
+            rgba(255,255,255,0.18) 360deg
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.percentage-circle::before {
+    content: "";
+
+    position: absolute;
+
+    width: 122px;
+    height: 122px;
+
+    border-radius: 50%;
+
+    background: #3d89ff;
+}
+
+.percentage-circle div {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.percentage-circle strong {
+    display: block;
+
+    color: white;
+
+    font-size: 31px;
+
+    font-weight: 700;
+}
+
+.percentage-circle span {
+    color: rgba(255,255,255,0.82);
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   PERCENTAGE CONTENT
+===================================================== */
+
+.percentage-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.status-badge {
+    display: inline-block;
+
+    padding: 5px 11px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.18);
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+.percentage-content h2 {
+    color: white;
+
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+.percentage-content p {
+    max-width: 390px;
+
+    color: rgba(255,255,255,0.82);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.attendance-stats {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.stat-card {
+    flex: 1;
+
+    min-height: 70px;
+
+    padding: 13px 16px;
+
+    background: white;
+
+    border: 1px solid #e6edf7;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    box-shadow:
+        0 8px 22px rgba(48, 91, 140, 0.05);
+
+    transition: 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(48, 91, 140, 0.09);
+}
+
+.stat-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+}
+
+.stat-icon.present {
+    background: #e9f9f0;
+    color: #27a965;
+}
+
+.stat-icon.absent {
+    background: #fff0f0;
+    color: #e05d5d;
+}
+
+.stat-icon.total {
+    background: #edf5ff;
+    color: #3982ed;
+}
+
+.stat-card span {
+    display: block;
+
+    color: #8997ac;
+
+    font-size: 11px;
+
+    margin-bottom: 2px;
+}
+
+.stat-card strong {
+    display: block;
+
+    color: #304462;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   HISTORY CARD
+===================================================== */
+
+.history-card {
+    background: white;
+
+    border: 1px solid #e5ecf7;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(48, 91, 140, 0.05);
+
+    margin-bottom: 20px;
+}
+
+.section-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+.section-header h2 {
+    color: #293e5f;
+
+    font-size: 18px;
+
+    font-weight: 650;
+}
+
+.section-header p {
+    color: #96a3b7;
+
+    font-size: 11px;
+
+    margin-top: 3px;
+}
+
+.student-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 12px;
+
+    background: #f1f6ff;
+
+    color: #4284e9;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 550px;
+}
+
+thead {
+    background: #f5f8fd;
+}
+
+th {
+    padding: 13px 15px;
+
+    color: #7889a3;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+td {
+    padding: 14px 15px;
+
+    color: #526783;
+
+    font-size: 12px;
+
+    border-bottom: 1px solid #edf1f7;
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #f8fbff;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   STATUS BADGES
+===================================================== */
+
+.attendance-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.attendance-status.present {
+    background: #e8f8ef;
+
+    color: #22985b;
+}
+
+.attendance-status.absent {
+    background: #fff0f0;
+
+    color: #dc5b5b;
+}
+
+
+/* =====================================================
+   LOADING / EMPTY
+===================================================== */
+
+.loading,
+.empty-message {
+    text-align: center;
+
+    padding: 35px !important;
+
+    color: #94a1b5;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   INFO CARD
+===================================================== */
+
+.info-card {
+    background: linear-gradient(
+        135deg,
+        #edf6ff,
+        #f8fbff
+    );
+
+    border: 1px solid #dceaff;
+
+    border-radius: 18px;
+
+    padding: 18px 22px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+.info-icon {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    border-radius: 11px;
+
+    background: #dcecff;
+
+    color: #3982ed;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.info-card h3 {
+    color: #345174;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.info-card p {
+    color: #7f91aa;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .main-content {
+        padding: 28px;
+    }
+
+    .attendance-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .attendance-stats {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .page-layout {
+        height: auto;
+
+        min-height: 100vh;
+    }
+
+    .sidebar {
+        width: 220px;
+
+        min-width: 220px;
+
+        height: 100vh;
+
+        position: sticky;
+
+        top: 0;
+    }
+
+    .main-content {
+        height: auto;
+
+        min-height: 100vh;
+
+        padding: 22px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .top-profile {
+        width: 100%;
+    }
+
+    .percentage-card {
+        padding: 22px;
+
+        gap: 20px;
+    }
+
+    .percentage-circle {
+        width: 125px;
+        height: 125px;
+
+        min-width: 125px;
+    }
+
+    .percentage-circle::before {
+        width: 98px;
+        height: 98px;
+    }
+
+    .percentage-circle strong {
+        font-size: 25px;
+    }
+
+}
+
+.present-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: #e8f8ef;
+    color: #1ca45c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.absent-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: #fff0f0;
+    color: #e74c3c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+@media (max-width: 650px) {
+
+    .page-layout {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+
+        height: auto;
+
+        min-height: auto;
+
+        position: relative;
+
+        overflow: visible;
+
+        border-right: none;
+
+        border-bottom: 1px solid #e5ecf7;
+    }
+
+    .sidebar-logo {
+        padding-bottom: 18px;
+    }
+
+    .sidebar-menu {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 7px;
+    }
+
+    .sidebar-menu a {
+        height: 45px;
+    }
+
+    .logout-btn {
+        margin-top: 10px;
+    }
+
+    .main-content {
+        width: 100%;
+
+        height: auto;
+
+        padding: 20px 15px 30px;
+    }
+
+    .attendance-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .percentage-card {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .percentage-content p {
+        margin: auto;
+    }
+
+    .section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .student-info {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .sidebar-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar h1 {
+        font-size: 25px;
+    }
+
+    .history-card {
+        padding: 17px;
+    }
+
+    .percentage-card {
+        border-radius: 18px;
+    }
+
+}

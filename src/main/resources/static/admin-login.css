@@ -1,0 +1,646 @@
+/* ===========================
+   GOOGLE FONT & RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:linear-gradient(135deg,#0f172a,#1d4ed8,#2563eb,#60a5fa);
+
+}
+
+
+/* ===========================
+      BACKGROUND BLOBS
+=========================== */
+
+.blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(60px);
+
+    opacity:.35;
+
+    animation:float 12s ease-in-out infinite;
+
+}
+
+.blob1{
+
+    width:280px;
+
+    height:280px;
+
+    background:#38bdf8;
+
+    top:-80px;
+
+    left:-80px;
+
+}
+
+.blob2{
+
+    width:320px;
+
+    height:320px;
+
+    background:#6366f1;
+
+    bottom:-120px;
+
+    right:-100px;
+
+    animation-delay:2s;
+
+}
+
+.blob3{
+
+    width:220px;
+
+    height:220px;
+
+    background:#3b82f6;
+
+    top:45%;
+
+    left:10%;
+
+    animation-delay:5s;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px) scale(1);
+
+    }
+
+    50%{
+
+        transform:translateY(-25px) scale(1.08);
+
+    }
+
+    100%{
+
+        transform:translateY(0px) scale(1);
+
+    }
+
+}
+
+
+/* ===========================
+        LOGIN CARD
+=========================== */
+
+.login-container{
+
+    width:420px;
+
+    max-width:92%;
+
+    padding:45px 40px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.30),
+
+        inset 0 1px 1px rgba(255,255,255,.15);
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+/* ===========================
+          LOGO
+=========================== */
+
+.logo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+}
+
+.logo i{
+
+    font-size:60px;
+
+    color:#fff;
+
+    margin-bottom:12px;
+
+}
+
+.logo h1{
+
+    color:#fff;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#dbeafe;
+
+    margin-bottom:35px;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+        ROLE SELECTOR
+=========================== */
+
+.role-selector{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+.role-btn{
+
+    flex:1;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.role-btn i{
+
+    margin-right:8px;
+
+}
+
+.role-btn:hover{
+
+    background:rgba(255,255,255,.18);
+
+}
+
+.role-btn.active{
+
+    background:#2563eb;
+
+    box-shadow:0 0 18px rgba(37,99,235,.45);
+
+}
+
+
+/* ===========================
+          FORM
+=========================== */
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    color:#fff;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+}
+
+
+/* ===========================
+        INPUT BOX
+=========================== */
+
+.input-box{
+
+    display:flex;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:12px;
+
+    padding:0 16px;
+
+    transition:.3s;
+
+}
+
+.input-box:hover{
+
+    border-color:#60a5fa;
+
+}
+
+.input-box:focus-within{
+
+    border-color:#93c5fd;
+
+    box-shadow:0 0 15px rgba(96,165,250,.35);
+
+}
+
+.input-box i:first-child{
+
+    color:#bfdbfe;
+
+    font-size:16px;
+
+}
+
+.input-box input{
+
+    flex:1;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    color:#fff;
+
+    padding:14px 12px;
+
+    font-size:15px;
+
+}
+
+.input-box input::placeholder{
+
+    color:#cbd5e1;
+
+}
+
+
+/* ===========================
+      SHOW PASSWORD
+=========================== */
+
+#togglePassword{
+
+    cursor:pointer;
+
+    color:#cbd5e1;
+
+    transition:.3s;
+
+}
+
+#togglePassword:hover{
+
+    color:#fff;
+
+}
+
+
+/* ===========================
+      ERROR MESSAGE
+=========================== */
+
+#errorMessage{
+
+    color:#fca5a5;
+
+    font-size:14px;
+
+    text-align:center;
+
+    min-height:22px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* ===========================
+        LOGIN BUTTON
+=========================== */
+
+#loginBtn{
+
+    width:100%;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:linear-gradient(90deg,#2563eb,#3b82f6);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+#loginBtn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.45);
+
+}
+
+#loginBtn:active{
+
+    transform:scale(.98);
+
+}
+
+/* ===========================
+        FOOTER LINK
+=========================== */
+
+.footer-links{
+
+    margin-top:25px;
+
+    text-align:center;
+
+}
+
+.footer-links a{
+
+    color:#dbeafe;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.footer-links a i{
+
+    margin-right:6px;
+
+}
+
+.footer-links a:hover{
+
+    color:#ffffff;
+
+}
+
+
+/* ===========================
+      CARD ANIMATION
+=========================== */
+
+.login-container{
+
+    animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ===========================
+        SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3b82f6;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0f172a;
+
+}
+
+
+/* ===========================
+      TABLET RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+    .login-container{
+
+        width:90%;
+
+        padding:35px 25px;
+
+    }
+
+    .logo h1{
+
+        font-size:28px;
+
+    }
+
+    .logo i{
+
+        font-size:52px;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+    }
+
+}
+
+
+/* ===========================
+      MOBILE RESPONSIVE
+=========================== */
+
+@media(max-width:480px){
+
+    body{
+
+        padding:20px;
+
+        overflow:auto;
+
+    }
+
+    .login-container{
+
+        width:100%;
+
+        padding:30px 20px;
+
+        border-radius:18px;
+
+    }
+
+    .role-selector{
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+    .role-btn{
+
+        width:100%;
+
+    }
+
+    .input-box input{
+
+        font-size:14px;
+
+    }
+
+    #loginBtn{
+
+        font-size:15px;
+
+        padding:14px;
+
+    }
+
+    .logo h1{
+
+        font-size:24px;
+
+    }
+
+    .logo i{
+
+        font-size:46px;
+
+    }
+
+}
+
+
+/* ===========================
+      LARGE DESKTOP
+=========================== */
+
+@media(min-width:1400px){
+
+    .login-container{
+
+        width:460px;
+
+    }
+
+}

@@ -1,0 +1,591 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body{
+
+    background:#eef4ff;
+    color:#222;
+    padding:30px;
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    max-width:1400px;
+    margin:auto;
+
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.top-bar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+
+}
+
+.back-btn{
+
+    text-decoration:none;
+    background:#2563eb;
+    color:#fff;
+    padding:12px 24px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#1d4ed8;
+    transform:translateY(-2px);
+
+}
+
+.page-title{
+
+    text-align:center;
+    flex:1;
+
+}
+
+.page-title h1{
+
+    font-size:34px;
+    color:#1e3a8a;
+    margin-bottom:5px;
+
+}
+
+.page-title p{
+
+    color:#64748b;
+    font-size:15px;
+
+}
+
+.refresh-btn{
+
+    background:#06b6d4;
+    color:#fff;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.refresh-btn:hover{
+
+    background:#0891b2;
+    transform:translateY(-2px);
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    padding:25px;
+    margin-bottom:25px;
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.card h2{
+
+    color:#2563eb;
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+
+}
+
+.form-group{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+    font-weight:600;
+    color:#374151;
+
+}
+
+.form-group input,
+.form-group select{
+
+    padding:12px 15px;
+    border:1px solid #dbe3f0;
+    border-radius:10px;
+    font-size:15px;
+    transition:.3s;
+
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.button-row{
+
+    margin-top:25px;
+    display:flex;
+    gap:15px;
+
+}
+
+
+.save-btn{
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:white !important;
+
+}
+
+.save-btn:hover{
+
+    background:linear-gradient(135deg,#1d4ed8,#1e40af);
+
+}
+
+.search-btn{
+
+    background:linear-gradient(135deg,#10b981,#059669);
+    color:white !important;
+
+}
+
+.search-btn:hover{
+
+    background:linear-gradient(135deg,#059669,#047857);
+
+}
+
+.reset-btn{
+
+    background:linear-gradient(135deg,#f59e0b,#d97706);
+    color:white !important;
+
+}
+
+.reset-btn:hover{
+
+    background:linear-gradient(135deg,#d97706,#b45309);
+
+}
+
+button{
+
+    border:none;
+    border-radius:10px;
+    padding:14px 25px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    color:#fff;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.save-btn{
+
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+
+}
+
+.clear-btn{
+
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+
+}
+
+.search-btn{
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+}
+
+.reset-btn{
+
+    background:linear-gradient(135deg,#f59e0b,#d97706);
+
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.search-grid{
+
+    display:grid;
+    grid-template-columns:2fr 2fr 1fr 1fr;
+    gap:15px;
+    align-items:center;
+
+}
+
+.search-grid input,
+.search-grid select{
+
+    padding:12px;
+    border:1px solid #dbe3f0;
+    border-radius:10px;
+    font-size:15px;
+
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.table-title{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+
+}
+
+.table-responsive{
+
+    width:100%;
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+
+}
+
+/* ===========================
+   TABLE HEADER
+=========================== */
+
+thead{
+
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+}
+
+thead th{
+
+    color:white;
+    padding:16px 12px;
+    font-weight:600;
+    text-align:center;
+    vertical-align:middle;
+
+}
+
+/* ===========================
+   COLUMN WIDTHS
+=========================== */
+
+/* ID */
+
+thead th:nth-child(1),
+tbody td:nth-child(1){
+
+    width:8%;
+
+}
+
+/* Student */
+
+thead th:nth-child(2),
+tbody td:nth-child(2){
+
+    width:18%;
+
+}
+
+/* Date */
+
+thead th:nth-child(3),
+tbody td:nth-child(3){
+
+    width:17%;
+
+}
+
+/* Day */
+
+thead th:nth-child(4),
+tbody td:nth-child(4){
+
+    width:17%;
+
+}
+
+/* Status */
+
+thead th:nth-child(5),
+tbody td:nth-child(5){
+
+    width:16%;
+
+}
+
+/* Actions */
+
+thead th:nth-child(6),
+tbody td:nth-child(6){
+
+    width:24%;
+
+}
+
+
+/* ===========================
+   TABLE ROWS
+=========================== */
+
+tbody tr{
+
+    transition:.3s;
+    border-bottom:1px solid #edf2f7;
+
+}
+
+tbody tr:nth-child(even){
+
+    background:#f8fbff;
+
+}
+
+tbody tr:hover{
+
+    background:#eef4ff;
+
+}
+
+
+/* ===========================
+   TABLE CELLS
+=========================== */
+
+tbody td{
+
+    padding:16px 12px;
+    text-align:center;
+    vertical-align:middle;
+    white-space:nowrap;
+
+}
+
+
+/* ===========================
+   STATUS
+=========================== */
+
+.status-present{
+
+    color:#16a34a;
+    font-weight:700;
+
+}
+
+.status-absent{
+
+    color:#dc2626;
+    font-weight:700;
+
+}
+
+
+/* ===========================
+   ACTION BUTTONS
+=========================== */
+
+tbody td:last-child{
+
+    text-align:center;
+    white-space:nowrap;
+
+}
+
+tbody td button{
+
+    margin:2px 4px;
+    padding:8px 14px;
+    font-size:14px;
+    border:none;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+    color:white;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+
+}
+
+
+/* Edit */
+
+.edit-btn{
+
+    background:#2563eb;
+
+}
+
+.edit-btn:hover{
+
+    background:#1d4ed8;
+    transform:translateY(-2px);
+
+}
+
+
+/* Delete */
+
+.delete-btn{
+
+    background:#ef4444;
+
+}
+
+.delete-btn:hover{
+
+    background:#dc2626;
+    transform:translateY(-2px);
+
+}
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1000px){
+
+.form-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.search-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 2fr auto;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+.search-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.search-buttons button{
+
+    min-width:120px;
+
+}
+.top-bar{
+
+flex-direction:column;
+gap:20px;
+
+}
+
+.button-row{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.button-row button{
+
+    min-width:180px;
+
+}
+}

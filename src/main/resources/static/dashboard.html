@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduTrack | Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <div>
+
+                <h2>EduTrack</h2>
+
+                <p>Student Management</p>
+
+            </div>
+
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    Students
+                </a>
+            </li>
+
+            <li>
+                <a href="course.html">
+                    <i class="fa-solid fa-book-open"></i>
+                    Courses
+                </a>
+            </li>
+
+            <li>
+                <a href="attendance.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Attendance
+                </a>
+            </li>
+
+            <li>
+                <a href="fee.html">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                    Fees
+                </a>
+            </li>
+
+            <li>
+                <a href="report.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Reports
+                </a>
+            </li>
+
+        </ul>
+
+        <button class="logout-btn" onclick="logout()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    Logout
+</button>
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Dashboard 👋</h1>
+
+                <p>Welcome back to EduTrack</p>
+
+            </div>
+
+            <div class="top-right">
+
+                
+
+                <div class="profile">
+
+   <div class="admin-profile">
+
+    <div class="admin-icon">
+        <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div>
+        <h3 id="adminName">Admin</h3>
+        <p>Administrator</p>
+    </div>
+
+</div>
+</div>
+
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME CARD -->
+
+        <section class="welcome-card">
+
+            <div>
+
+                <h2>
+    Welcome Back, <span id="welcomeAdminName">Admin</span>
+</h2>
+
+                <p>
+
+                    Manage students, courses and attendance
+                    from one dashboard.
+
+                </p>
+
+            </div>
+
+            <div class="date-box">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <span id="currentDate"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- DASHBOARD CARDS -->
+
+        <section class="cards">
+
+            <div class="card blue">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>Total Students</h3>
+
+                <h1 id="totalStudents">0</h1>
+
+            </div>
+
+            <div class="card green">
+
+                <i class="fa-solid fa-user-check"></i>
+
+                <h3>Present Today</h3>
+
+                <h1 id="presentStudents">0</h1>
+
+            </div>
+
+            <div class="card red">
+
+                <i class="fa-solid fa-user-xmark"></i>
+
+                <h3>Absent Today</h3>
+
+                <h1 id="absentStudents">0</h1>
+
+            </div>
+
+            <div class="card purple">
+
+                <i class="fa-solid fa-book"></i>
+
+                <h3>Total Courses</h3>
+
+                <h1 id="totalCourses">0</h1>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOWER SECTION -->
+
+       <section class="bottom-section">
+
+    <!-- Attendance Overview -->
+
+    <div class="attendance-panel">
+
+        <h2>
+            <i class="fa-solid fa-chart-pie"></i>
+            Attendance Overview
+        </h2>
+
+        <canvas id="attendanceChart"></canvas>
+
+    </div>
+
+
+    <!-- Recent Students -->
+
+    <div class="recent-panel">
+
+        <h2>
+            <i class="fa-solid fa-user-clock"></i>
+            Recent Students
+        </h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Course</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="recentStudentsTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="bottom-section second-row">
+
+    <!-- Recent Attendance -->
+
+    <div class="recent-panel">
+
+        <h2>
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            Recent Attendance
+
+        </h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Student</th>
+                        <th>Date</th>
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="recentAttendanceTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Recent Fee -->
+
+    <div class="recent-panel">
+
+        <h2>
+
+            <i class="fa-solid fa-money-bill-wave"></i>
+
+            Recent Fee Payments
+
+        </h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Student</th>
+                        <th>Paid</th>
+                        <th>Remaining</th>
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="recentFeeTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+    </main>
+
+</div>
+
+<script>
+
+const today = new Date();
+
+document.getElementById("currentDate").innerHTML =
+today.toDateString();
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="dashboard.js"></script>
+</body>
+
+</html>

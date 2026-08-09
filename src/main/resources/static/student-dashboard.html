@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>EduTrack | Student Dashboard</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+    <!-- Dashboard CSS -->
+
+    <link rel="stylesheet"
+          href="student-dashboard.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     Background Shapes
+========================================= -->
+
+<div class="circle circle1"></div>
+
+<div class="circle circle2"></div>
+
+
+
+<!-- =========================================
+     Dashboard
+========================================= -->
+
+<div class="dashboard">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+        <div>
+            <h2>EduTrack</h2>
+            <span>Student Portal</span>
+        </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <ul>
+
+            <li class="active">
+                <a href="student-dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="student-profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="student-attendance.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="student-fee.html">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Fee Details</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <button class="logout-btn" id="logoutBtn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </button>
+
+</aside>
+
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================
+             TOP BAR
+        ================================== -->
+
+        <header class="topbar">
+
+
+            <!-- Welcome -->
+
+            <div>
+
+                <h1>
+
+                    Welcome Back,
+
+                    <span id="studentName">
+                        Student
+                    </span>
+
+                    👋
+
+                </h1>
+
+
+                <p>
+                    Here's your academic overview.
+                </p>
+
+            </div>
+
+
+
+            <!-- Student Profile -->
+
+            <div class="profile">
+
+
+                <div class="avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3 id="profileName">
+                        Student
+                    </h3>
+
+                    <span id="profileCourse">
+                        Course
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================
+             HERO CARD
+        ================================== -->
+
+        <section class="hero-card">
+
+
+            <div>
+
+                <h2>
+                    Student Dashboard
+                </h2>
+
+
+                <p>
+
+                    Track your attendance, monitor fee payments,
+                    manage courses and stay updated with your
+                    academic progress.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Current Date -->
+
+            <div class="hero-date">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <span id="currentDate"></span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             STATISTICS
+        ================================== -->
+
+        <section class="stats">
+
+
+            <!-- Today's Attendance -->
+
+            <div class="card">
+
+                <i class="fa-solid fa-calendar-check icon blue"></i>
+
+                <h4>
+                    Today's Attendance
+                </h4>
+
+
+                <h2 id="attendancePercent">
+
+                    NOT MARKED
+
+                </h2>
+
+            </div>
+
+
+
+            <!-- Fee Paid -->
+
+            <div class="card">
+
+                <i class="fa-solid fa-wallet icon green"></i>
+
+                <h4>
+                    Fee Paid
+                </h4>
+
+
+                <h2 id="feePaid">
+
+                    ₹0
+
+                </h2>
+
+            </div>
+
+
+
+            <!-- Pending Fee -->
+
+            <div class="card">
+
+                <i class="fa-solid fa-hourglass-half icon orange"></i>
+
+                <h4>
+                    Pending Fee
+                </h4>
+
+
+                <h2 id="pendingFee">
+
+                    ₹0
+
+                </h2>
+
+            </div>
+
+
+
+            <!-- Courses -->
+
+            <div class="card">
+
+                <i class="fa-solid fa-book icon purple"></i>
+
+                <h4>
+                    Courses
+                </h4>
+
+
+                <h2 id="courseCount">
+
+                    0
+
+                </h2>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             DASHBOARD GRID
+        ================================== -->
+
+        <section class="dashboard-grid">
+
+
+
+            <!-- =================================
+                 TODAY'S ATTENDANCE
+            ================================== -->
+
+            <div class="glass-card attendance-status-card">
+
+
+                <h3>
+                    Today's Attendance
+                </h3>
+
+
+
+                <div class="today-attendance">
+
+
+                    <!-- Status Icon -->
+
+                    <div id="attendanceStatusIcon"
+                         class="attendance-status-icon not-marked">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                    </div>
+
+
+
+                    <!-- Status -->
+
+                    <div class="attendance-status-text">
+
+
+                        <span id="attendanceStatus">
+
+                            NOT MARKED
+
+                        </span>
+
+
+                        <p id="attendanceDateText">
+
+                            Attendance has not been marked
+                            for today.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 STUDENT PROFILE
+            ================================== -->
+
+            <div class="glass-card">
+
+
+                <h3>
+                    Student Profile
+                </h3>
+
+
+
+                <ul class="profile-list">
+
+
+                    <li>
+
+                        <strong>
+                            Name
+                        </strong>
+
+                        <span id="studentFullName">
+                            Student
+                        </span>
+
+                    </li>
+
+
+
+                    <li>
+
+                        <strong>
+                            Email
+                        </strong>
+
+                        <span id="studentEmail">
+                            -
+                        </span>
+
+                    </li>
+
+
+
+                    <li>
+
+                        <strong>
+                            Course
+                        </strong>
+
+                        <span id="studentCourse">
+                            -
+                        </span>
+
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 FEE STATUS
+            ================================== -->
+
+            <div class="glass-card">
+
+
+                <h3>
+                    Fee Status
+                </h3>
+
+
+
+                <div class="fee-box">
+
+
+                    <p>
+
+                        Total Fee
+
+                        <span id="totalFee">
+
+                            ₹0
+
+                        </span>
+
+                    </p>
+
+
+
+                    <p>
+
+                        Paid
+
+                        <span id="paidFee">
+
+                            ₹0
+
+                        </span>
+
+                    </p>
+
+
+
+                    <p>
+
+                        Remaining
+
+                        <span id="remainingFee">
+
+                            ₹0
+
+                        </span>
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 NOTIFICATIONS
+            ================================== -->
+
+            <div class="glass-card">
+
+
+                <h3>
+                    Notifications
+                </h3>
+
+
+
+                <ul class="notification-list">
+
+
+                    <li>
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        Attendance Updated
+
+                    </li>
+
+
+
+                    <li>
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                        Fee Reminder
+
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="student-dashboard.js"></script>
+
+
+</body>
+
+</html>

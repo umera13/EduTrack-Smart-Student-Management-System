@@ -1,0 +1,1248 @@
+/* ===========================
+   GOOGLE FONT & RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f9ff;
+    color:#1f2937;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+
+.navbar{
+
+    width:100%;
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 8%;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(255,255,255,.75);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:28px;
+    font-weight:700;
+
+    color:#2563eb;
+
+}
+
+.logo i{
+
+    font-size:34px;
+
+}
+
+.nav-links{
+
+    display:flex;
+    gap:35px;
+
+    list-style:none;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#374151;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#2563eb;
+
+}
+
+.nav-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.btn{
+
+    padding:12px 24px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.admin-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.admin-btn:hover{
+
+    background:#1748b7;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+.student-btn{
+
+    border:2px solid #2563eb;
+
+    color:#2563eb;
+
+    background:white;
+
+}
+
+.student-btn:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:120px 8% 80px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Background blobs */
+
+.hero::before{
+
+    content:"";
+
+    width:500px;
+
+    height:500px;
+
+    position:absolute;
+
+    top:-180px;
+
+    right:-180px;
+
+    background:#dbeafe;
+
+    border-radius:50%;
+
+    filter:blur(40px);
+
+    z-index:-2;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    width:400px;
+
+    height:400px;
+
+    position:absolute;
+
+    left:-150px;
+
+    bottom:-150px;
+
+    background:#bfdbfe;
+
+    border-radius:50%;
+
+    filter:blur(60px);
+
+    z-index:-2;
+
+}
+
+.hero-content{
+
+    width:50%;
+
+    animation:fadeLeft 1s ease;
+
+}
+
+.hero-content h1{
+
+    font-size:58px;
+
+    line-height:1.2;
+
+    font-weight:700;
+
+}
+
+.hero-content span{
+
+    color:#2563eb;
+
+}
+
+.hero-content p{
+
+    margin:30px 0;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+    color:#4b5563;
+
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:16px 34px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.primary-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(37,99,235,.35);
+
+}
+
+.secondary-btn{
+
+    border:2px solid #2563eb;
+
+    color:#2563eb;
+
+    background:white;
+
+}
+
+.secondary-btn:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:translateY(-5px);
+
+}
+
+/* ===========================
+   HERO ILLUSTRATION
+=========================== */
+
+.hero-illustration{
+
+    width:45%;
+    height:550px;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    animation:fadeRight 1s ease;
+
+}
+
+/* Floating Background Circles */
+
+.circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    animation:float 6s ease-in-out infinite;
+
+}
+
+.circle1{
+
+    width:180px;
+    height:180px;
+
+    background:rgba(37,99,235,.10);
+
+    top:40px;
+    left:50px;
+
+}
+
+.circle2{
+
+    width:120px;
+    height:120px;
+
+    background:rgba(59,130,246,.18);
+
+    bottom:60px;
+    right:60px;
+
+    animation-delay:1s;
+
+}
+
+.circle3{
+
+    width:70px;
+    height:70px;
+
+    background:rgba(147,197,253,.35);
+
+    top:220px;
+    right:100px;
+
+    animation-delay:2s;
+
+}
+
+/* ===========================
+   FLOATING CARDS
+=========================== */
+
+.floating-card{
+
+    position:absolute;
+
+    width:180px;
+    height:120px;
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:22px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+    transition:.35s;
+
+}
+
+.floating-card:hover{
+
+    transform:translateY(-10px) scale(1.05);
+
+    box-shadow:0 25px 50px rgba(37,99,235,.25);
+
+}
+
+.floating-card i{
+
+    font-size:34px;
+
+    color:#2563eb;
+
+    margin-bottom:12px;
+
+}
+
+.floating-card h3{
+
+    font-size:18px;
+
+    color:#1f2937;
+
+}
+
+/* Card Positions */
+
+.card1{
+
+    top:20px;
+    left:40px;
+
+    animation:cardFloat1 6s ease-in-out infinite;
+
+}
+
+.card2{
+
+    top:80px;
+    right:20px;
+
+    animation:cardFloat2 6s ease-in-out infinite;
+
+}
+
+.card3{
+
+    bottom:80px;
+    left:10px;
+
+    animation:cardFloat3 6s ease-in-out infinite;
+
+}
+
+.card4{
+
+    bottom:10px;
+    right:70px;
+
+    animation:cardFloat4 6s ease-in-out infinite;
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+        transform:translateX(-60px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+        transform:translateX(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-20px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes cardFloat1{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+}
+
+@keyframes cardFloat2{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(18px);
+
+    }
+
+}
+
+@keyframes cardFloat3{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+@keyframes cardFloat4{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(15px);
+
+    }
+
+}
+
+/* ===========================
+   FEATURES SECTION
+=========================== */
+
+.features{
+
+    padding:100px 8%;
+    text-align:center;
+
+}
+
+.features h2{
+
+    font-size:42px;
+    color:#1f2937;
+
+}
+
+.features>p{
+
+    margin-top:15px;
+    color:#6b7280;
+    font-size:18px;
+
+}
+
+.feature-grid{
+
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.feature-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.18);
+
+}
+
+.feature-card i{
+
+    font-size:45px;
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+
+    transition:.35s;
+
+}
+
+.feature-card:hover i{
+
+    transform:scale(1.2) rotate(8deg);
+
+}
+
+.feature-card h3{
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.feature-card p{
+
+    color:#6b7280;
+
+    line-height:1.7;
+
+}
+
+/* ===========================
+   CALL TO ACTION
+=========================== */
+
+.cta{
+
+    margin:100px 8%;
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    color:white;
+
+    text-align:center;
+
+    padding:70px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:50%;
+
+    top:-120px;
+    right:-100px;
+
+}
+
+.cta::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    background:rgba(255,255,255,.06);
+
+    border-radius:50%;
+
+    left:-80px;
+    bottom:-80px;
+
+}
+
+.cta h2{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+
+}
+
+.cta p{
+
+    font-size:18px;
+
+    margin-bottom:35px;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+.cta .primary-btn{
+
+    background:white;
+
+    color:#2563eb;
+
+}
+
+.cta .primary-btn:hover{
+
+    background:#f3f4f6;
+
+}
+
+.cta .secondary-btn{
+
+    border:2px solid white;
+
+    color:white;
+
+    background:transparent;
+
+}
+
+.cta .secondary-btn:hover{
+
+    background:white;
+
+    color:#2563eb;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    padding:40px;
+
+    text-align:center;
+
+    background:#111827;
+
+    color:white;
+
+}
+
+footer h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+footer p{
+
+    margin-top:8px;
+
+    color:#d1d5db;
+
+}
+
+/* ===========================
+   SCROLL ANIMATION
+=========================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:1s;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media(max-width:1200px){
+
+    .hero{
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        text-align:center;
+
+        gap:70px;
+
+    }
+
+    .hero-content{
+
+        width:100%;
+
+    }
+
+    .hero-illustration{
+
+        width:100%;
+
+        height:450px;
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    .navbar{
+
+        padding:20px 5%;
+
+    }
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .hero{
+
+        padding:140px 5% 80px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:46px;
+
+    }
+
+    .feature-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:18px;
+
+        height:auto;
+
+        padding:20px;
+
+    }
+
+    .nav-buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .hero{
+
+        padding-top:180px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:38px;
+
+    }
+
+    .hero-content p{
+
+        font-size:16px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .primary-btn,
+
+    .secondary-btn{
+
+        width:260px;
+
+        justify-content:center;
+
+    }
+
+    .feature-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .floating-card{
+
+        transform:scale(.85);
+
+    }
+
+    .cta{
+
+        padding:50px 25px;
+
+    }
+
+    .cta h2{
+
+        font-size:32px;
+
+    }
+
+    .cta-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero-content h1{
+
+        font-size:32px;
+
+    }
+
+    .features h2{
+
+        font-size:32px;
+
+    }
+
+}
+
+/* ==========================================
+   EXTRA BUTTON EFFECTS
+========================================== */
+
+.primary-btn,
+.secondary-btn,
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.primary-btn::before,
+.secondary-btn::before,
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.7s;
+
+}
+
+.primary-btn:hover::before,
+.secondary-btn:hover::before,
+.btn:hover::before{
+
+    left:130%;
+
+}
+
+/* ==========================================
+   HERO SCROLL SUPPORT
+========================================== */
+
+.hero{
+
+    transition:transform .6s ease;
+
+}
+
+/* ==========================================
+   FEATURE CARD BORDER EFFECT
+========================================== */
+
+.feature-card{
+
+    border:1px solid transparent;
+
+}
+
+.feature-card:hover{
+
+    border-color:#3b82f6;
+
+}
+
+/* ==========================================
+   GLASS EFFECT
+========================================== */
+
+.floating-card{
+
+    border:1px solid rgba(255,255,255,.35);
+
+}
+
+/* ==========================================
+   SMOOTH TRANSITIONS
+========================================== */
+
+a,
+button,
+.feature-card,
+.floating-card{
+
+    transition:all .35s ease;
+
+}
+
+/* ==========================================
+   CUSTOM SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf4ff;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1748b7;
+
+}
+
+/* ==========================================
+   SELECTION COLOR
+========================================== */
+
+::selection{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+/* ===========================
+   CURSOR PARTICLES
+=========================== */
+
+.particle{
+
+    position:fixed;
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    animation:particleFade .8s linear forwards;
+
+    box-shadow:0 0 10px currentColor;
+
+}
+
+@keyframes particleFade{
+
+    0%{
+
+        transform:translate(-50%,-50%) scale(1);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translate(-50%,-80%) scale(0);
+
+        opacity:0;
+
+    }
+
+}

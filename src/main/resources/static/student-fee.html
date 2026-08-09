@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>EduTrack | Fee Details</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="student-fee.css">
+
+</head>
+
+
+<body>
+
+    <!-- Background -->
+    <div class="background-circle circle-one"></div>
+    <div class="background-circle circle-two"></div>
+
+
+    <div class="page-layout">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- Logo -->
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>EduTrack</h2>
+
+                    <span>Student Portal</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <nav class="sidebar-menu">
+
+
+                <a href="student-dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <a href="student-profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>My Profile</span>
+
+                </a>
+
+
+                <a href="student-attendance.html">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <span>Attendance</span>
+
+                </a>
+
+
+                <a href="student-fee.html"
+                   class="active">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>Fee Details</span>
+
+                </a>
+
+
+            </nav>
+
+
+            <!-- Logout -->
+
+            <button id="logoutBtn"
+                    class="logout-btn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+
+            <!-- =========================
+                 HEADER
+            ========================== -->
+
+            <header class="topbar">
+
+
+                <div>
+
+                    <p class="page-label">
+                        STUDENT PORTAL
+                    </p>
+
+                    <h1>
+                        Fee Details
+                    </h1>
+
+                    <p class="welcome-text">
+                        View your fee payment details and payment status.
+                    </p>
+
+                </div>
+
+
+                <!-- Student Profile -->
+
+                <div class="top-profile">
+
+
+                    <div class="top-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="topStudentName">
+                            Student
+                        </strong>
+
+                        <span id="topStudentCourse">
+                            Course
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+            <!-- =========================
+                 FEE SUMMARY
+            ========================== -->
+
+            <section class="fee-summary">
+
+
+                <!-- Total Fee -->
+
+                <div class="fee-card total-fee">
+
+                    <div class="fee-icon">
+
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Fee
+                        </span>
+
+                        <h2 id="totalFee">
+                            ₹0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Paid Fee -->
+
+                <div class="fee-card paid-fee">
+
+                    <div class="fee-icon">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Paid Amount
+                        </span>
+
+                        <h2 id="paidFee">
+                            ₹0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Remaining Fee -->
+
+                <div class="fee-card remaining-fee">
+
+                    <div class="fee-icon">
+
+                        <i class="fa-solid fa-hourglass-half"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Remaining Fee
+                        </span>
+
+                        <h2 id="remainingFee">
+                            ₹0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =========================
+                 PAYMENT STATUS
+            ========================== -->
+
+            <section class="payment-status-card">
+
+
+                <div class="status-left">
+
+                    <div class="status-icon">
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <p>
+                            Payment Status
+                        </p>
+
+                        <h2 id="paymentStatus">
+                            Loading...
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status-message"
+                     id="statusMessage">
+
+                    Checking your fee status...
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =========================
+                 STUDENT FEE INFORMATION
+            ========================== -->
+
+            <section class="fee-details-card">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Fee Information
+                        </h2>
+
+                        <p>
+                            Your current academic fee details
+                        </p>
+
+                    </div>
+
+
+                    <div class="student-info">
+
+                        <i class="fa-solid fa-user-graduate"></i>
+
+                        <span id="studentName">
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Details -->
+
+                <div class="details-grid">
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Student ID
+                        </span>
+
+                        <strong id="studentId">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Student Name
+                        </span>
+
+                        <strong id="studentFullName">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong id="studentEmail">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Course
+                        </span>
+
+                        <strong id="studentCourse">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =========================
+                 FEE BREAKDOWN
+            ========================== -->
+
+            <section class="breakdown-card">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Fee Breakdown
+                        </h2>
+
+                        <p>
+                            Overview of your fee payment
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="fee-breakdown">
+
+
+                    <div class="breakdown-row">
+
+                        <span>
+                            Total Fee
+                        </span>
+
+                        <strong id="breakdownTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="breakdown-row">
+
+                        <span>
+                            Amount Paid
+                        </span>
+
+                        <strong id="breakdownPaid">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="breakdown-row remaining-row">
+
+                        <span>
+                            Remaining Amount
+                        </span>
+
+                        <strong id="breakdownRemaining">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =========================
+                 INFORMATION NOTE
+            ========================== -->
+
+            <section class="info-card">
+
+
+                <div class="info-icon">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Fee Reminder
+                    </h3>
+
+                    <p>
+                        Please make sure your pending fees are paid
+                        within the prescribed deadline to avoid any
+                        interruption in your academic activities.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="student-fee.js"></script>
+
+</body>
+
+</html>

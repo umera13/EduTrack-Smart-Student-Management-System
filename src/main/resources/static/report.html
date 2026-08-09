@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports | EduTrack</title>
+
+    <link rel="stylesheet" href="report.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="top-bar">
+
+        <a href="dashboard.html" class="back-btn">
+            ← Dashboard
+        </a>
+
+        <div class="page-title">
+
+            <h1>📊 Reports & Analytics</h1>
+
+            <p>Student Management Reports</p>
+
+        </div>
+
+        <button class="refresh-btn" onclick="loadReports()">
+            🔄 Refresh
+        </button>
+
+    </div>
+
+    <!-- Summary Cards -->
+
+    <div class="summary-grid">
+
+        <div class="summary-card blue">
+
+            <h3>Total Students</h3>
+
+            <h2 id="totalStudents">0</h2>
+
+        </div>
+
+        <div class="summary-card purple">
+
+            <h3>Total Courses</h3>
+
+            <h2 id="totalCourses">0</h2>
+
+        </div>
+
+        <div class="summary-card green">
+
+            <h3>Present Today</h3>
+
+            <h2 id="presentStudents">0</h2>
+
+        </div>
+
+        <div class="summary-card red">
+
+            <h3>Absent Today</h3>
+
+            <h2 id="absentStudents">0</h2>
+
+        </div>
+
+        <div class="summary-card orange">
+
+            <h3>Fee Collected</h3>
+
+            <h2 id="feeCollected">₹0</h2>
+
+        </div>
+
+        <div class="summary-card yellow">
+
+            <h3>Pending Fee</h3>
+
+            <h2 id="pendingFee">₹0</h2>
+
+        </div>
+
+    </div>
+
+    <!-- Filters -->
+
+    <div class="card">
+
+        <h2>🔍 Filters</h2>
+
+        <div class="filter-grid">
+
+            <select id="searchStudent">
+
+                <option value="">All Students</option>
+
+            </select>
+
+            <select id="searchCourse">
+
+                <option value="">All Courses</option>
+
+            </select>
+
+            <input type="date" id="searchDate">
+
+            <select id="searchStatus">
+
+                <option value="">All Status</option>
+
+                <option value="Present">Present</option>
+
+                <option value="Absent">Absent</option>
+
+            </select>
+
+            <button onclick="searchReports()">
+
+                🔍 Search
+
+            </button>
+
+            <button onclick="resetReports()">
+
+                ↺ Reset
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Student Report -->
+
+    <div class="card">
+
+        <h2>👨‍🎓 Student Report</h2>
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Name</th>
+
+                <th>Email</th>
+
+                <th>Course</th>
+
+                <th>Fee</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody id="studentReportTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Attendance Report -->
+
+    <div class="card">
+
+        <h2>📅 Attendance Report</h2>
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>Student</th>
+
+                <th>Date</th>
+
+                <th>Status</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody id="attendanceReportTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Fee Report -->
+
+    <div class="card">
+
+        <h2>💰 Fee Report</h2>
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>Student</th>
+
+                <th>Course</th>
+
+                <th>Total Fee</th>
+
+                <th>Paid</th>
+
+                <th>Remaining</th>
+
+                <th>Status</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody id="feeReportTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Export -->
+
+    <div class="card export-card">
+
+        <h2>📤 Export Reports</h2>
+
+        <div class="export-buttons">
+
+            <button onclick="window.print()">
+
+                🖨 Print
+
+            </button>
+
+            <button onclick="exportPDF()">
+
+                📄 Export PDF
+
+            </button>
+
+            <button onclick="exportExcel()">
+
+                📊 Export Excel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+<script src="report.js"></script>
+
+</body>
+
+</html>

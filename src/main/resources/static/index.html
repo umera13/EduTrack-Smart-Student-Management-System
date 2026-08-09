@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduTrack - Student Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         TOP NAVIGATION
+    ========================== -->
+
+    <div class="top-nav">
+
+        <div class="left-nav">
+
+            <a href="dashboard.html" class="back-btn">
+                <span>←</span> Dashboard
+            </a>
+
+            <div class="page-title">
+
+                <h2>👨‍🎓 Student Management</h2>
+
+                <p>Manage student records and portal access</p>
+
+            </div>
+
+        </div>
+
+        <div class="right-nav">
+
+            <button onclick="refreshPage()" class="refresh-btn">
+                🔄 Refresh
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+
+        <!-- =========================
+             SEARCH
+        ========================== -->
+
+        <div class="search-container">
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="searchStudent"
+                    placeholder="Search by Name or Email"
+                    onkeypress="if(event.key==='Enter') searchStudent()">
+
+            </div>
+
+            <button onclick="searchStudent()" class="search-btn">
+                Search
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             STUDENT FORM
+        ========================== -->
+
+        <div class="form-card">
+
+            <div class="form-heading">
+
+                <div>
+                    <h2>Student Information</h2>
+                    <p>Add or update student details</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-container">
+
+                <input type="hidden" id="studentId">
+
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter Student Name">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter Email">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter Student Password">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="course">
+                        Course
+                    </label>
+
+                    <select id="course">
+
+                        <option value="">
+                            Select Course
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="fee">
+                        Course Fee
+                    </label>
+
+                    <input
+                        type="number"
+                        id="fee"
+                        placeholder="Course Fee"
+                        readonly>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    onclick="saveStudent()"
+                    class="save-btn">
+
+                    💾 Save Student
+
+                </button>
+
+                <button
+                    onclick="clearForm()"
+                    class="clear-btn">
+
+                    Clear
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             STUDENT LIST
+        ========================== -->
+
+        <div class="table-card">
+
+            <div class="table-header">
+
+                <div>
+
+                    <h2>📋 Student List</h2>
+
+                    <p>Registered students in EduTrack</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Name</th>
+
+                            <th>Email</th>
+
+                            <th>Course</th>
+
+                            <th>Fee</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="studentTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

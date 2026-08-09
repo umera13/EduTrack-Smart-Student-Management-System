@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fee Management</title>
+
+    <link rel="stylesheet" href="fee.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+
+    <div class="page-header">
+
+        <div class="header-left">
+
+            <a href="dashboard.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                            ← Dashboard
+
+            </a>
+
+            <div class="page-title">
+
+                <h1>
+                    <i class="fa-solid fa-sack-dollar"></i>
+                    Fee Management
+                </h1>
+
+                <p>
+                    Manage student fee payments
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button class="refresh-btn"
+                onclick="loadFees()">
+
+            <i class="fa-solid fa-rotate"></i>
+            Refresh
+
+        </button>
+
+    </div>
+
+    <!-- Fee Form -->
+
+    <div class="card">
+
+        <h2>💳 Add Fee Payment</h2>
+
+        <input type="hidden" id="feeId">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>Select Student</label>
+
+                <select id="studentId"></select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Student Name</label>
+
+                <input type="text" id="studentName" readonly>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Course</label>
+
+                <input type="text" id="course" readonly>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Total Fee</label>
+
+                <input type="number" id="totalFee" readonly>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Paid Amount</label>
+
+                <input type="number"
+                       id="paidAmount"
+                       placeholder="Enter Paid Amount"
+                       onkeyup="calculateRemaining()">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Remaining Amount</label>
+
+                <input type="number"
+                       id="remainingAmount"
+                       readonly>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Payment Status</label>
+
+                <input type="text"
+                       id="paymentStatus"
+                       readonly>
+
+            </div>
+
+        </div>
+
+        <div class="button-row">
+
+            <button class="save-btn"
+                    onclick="saveFee()">
+
+                💾 Save
+
+            </button>
+
+            <button class="clear-btn"
+                    onclick="clearFeeForm()">
+
+                🧹 Clear
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Search -->
+
+    <div class="card">
+
+        <h2>🔍 Search Fee Record</h2>
+
+        <div class="search-grid">
+
+            <select id="searchStudent">
+
+                <option value="">All Students</option>
+
+            </select>
+
+            <button class="search-btn"
+                    onclick="searchFee()">
+
+                🔍 Search
+
+            </button>
+
+            <button class="reset-btn"
+                    onclick="resetSearch()">
+
+                ↺ Reset
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Table -->
+
+    <div class="card">
+
+    <h2>
+        <i class="fa-solid fa-clipboard-list"></i>
+        Fee Records
+    </h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Student</th>
+                    <th>Course</th>
+                    <th>Total Fee</th>
+                    <th>Paid</th>
+                    <th>Remaining</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="feeTable">
+
+                <!-- JavaScript will insert records here -->
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="fee.js"></script>
+
+</body>
+
+</html>

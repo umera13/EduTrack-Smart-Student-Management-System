@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Management</title>
+
+    <link rel="stylesheet" href="attendance.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="top-bar">
+
+        <a href="dashboard.html" class="back-btn">
+            ← Dashboard
+        </a>
+
+        <div class="page-title">
+
+            <h1>📅 Attendance Management</h1>
+
+            <p>Manage daily student attendance records</p>
+
+        </div>
+
+        <button class="refresh-btn" onclick="refreshAttendance()">
+            🔄 Refresh
+        </button>
+
+    </div>
+
+
+    <!-- ================= ATTENDANCE FORM ================= -->
+
+    <div class="card attendance-card">
+
+        <h2>📝 Mark Attendance</h2>
+
+        <input type="hidden" id="attendanceId">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>Select Student</label>
+
+                <select id="studentId">
+
+                    <option value="">Select Student</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Date</label>
+
+                <input type="date" id="attendanceDate">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Status</label>
+
+                <select id="status">
+
+                    <option value="">Choose Status</option>
+
+                    <option value="Present">🟢 Present</option>
+
+                    <option value="Absent">🔴 Absent</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="button-row">
+
+            <button class="save-btn" onclick="saveAttendance()">
+
+                💾 Save Attendance
+
+            </button>
+
+            <button class="clear-btn" onclick="clearAttendanceForm()">
+
+                🧹 Clear
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="card search-card">
+
+        <h2>🔍 Search Attendance</h2>
+
+        <div class="search-grid">
+
+            <select id="searchStudent">
+
+                <option value="">All Students</option>
+
+            </select>
+
+            <input type="date" id="searchDate">
+
+            <button class="search-btn" onclick="searchAttendance()">
+
+                🔍 Search
+
+            </button>
+
+            <button class="reset-btn" onclick="resetSearch()">
+
+                ↺ Reset
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TABLE ================= -->
+
+   <!-- ================= TABLE ================= -->
+
+<div class="card table-card">
+
+    <div class="table-title">
+
+        <h2>📋 Attendance Records</h2>
+
+        <span id="recordCount"></span>
+
+    </div>
+
+    <div class="table-responsive">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Student</th>
+
+                    <th>Date</th>
+
+                    <th>Day</th>
+
+                    <th>Status</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="attendanceTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="attendance.js"></script>
+
+</body>

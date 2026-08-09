@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>EduTrack | Attendance</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="student-attendance.css">
+
+</head>
+
+<body>
+
+    <div class="background-circle circle-one"></div>
+    <div class="background-circle circle-two"></div>
+
+
+    <div class="page-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <h2>EduTrack</h2>
+                    <span>Student Portal</span>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-menu">
+
+                <a href="student-dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <a href="student-profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>My Profile</span>
+
+                </a>
+
+
+                <a href="student-attendance.html"
+                   class="active">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <span>Attendance</span>
+
+                </a>
+
+
+                <a href="student-fee.html">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>Fee Details</span>
+
+                </a>
+
+            </nav>
+
+
+            <button id="logoutBtn"
+                    class="logout-btn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+
+            <!-- Header -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <p class="page-label">
+                        STUDENT PORTAL
+                    </p>
+
+                    <h1>
+                        Attendance
+                    </h1>
+
+                    <p class="welcome-text">
+                        Track your daily attendance and attendance percentage.
+                    </p>
+
+                </div>
+
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong id="topStudentName">
+                            Student
+                        </strong>
+
+                        <span id="topStudentCourse">
+                            Course
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================
+                 ATTENDANCE SUMMARY
+            ========================== -->
+
+            <!-- =========================
+     TODAY'S ATTENDANCE
+========================== -->
+
+<section class="attendance-summary">
+
+    <!-- Today's Status -->
+
+    <div class="today-attendance-card">
+
+        <div class="today-icon" id="todayAttendanceIcon">
+            <i class="fa-solid fa-calendar-check"></i>
+        </div>
+
+        <div class="today-content">
+
+            <span class="today-label">
+                TODAY'S ATTENDANCE
+            </span>
+
+            <h2 id="todayAttendanceStatus">
+                Checking...
+            </h2>
+
+            <p id="todayAttendanceMessage">
+                Checking today's attendance status...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Statistics -->
+
+    <div class="attendance-stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon present">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Present
+                </span>
+
+                <strong id="presentCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon absent">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Absent
+                </span>
+
+                <strong id="absentCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon total">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    Total Classes
+                </span>
+
+                <strong id="totalCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+            <!-- =========================
+                 ATTENDANCE HISTORY
+            ========================== -->
+
+            <section class="history-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Attendance History
+                        </h2>
+
+                        <p>
+                            Your attendance records
+                        </p>
+
+                    </div>
+
+
+                    <div class="student-info">
+
+                        <i class="fa-solid fa-user-graduate"></i>
+
+                        <span id="studentName">
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Table -->
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    #
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Day
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="attendanceTableBody">
+
+                            <tr>
+
+                                <td colspan="4"
+                                    class="loading">
+
+                                    Loading attendance...
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 ATTENDANCE NOTE
+            ========================== -->
+
+            <section class="info-card">
+
+                <div class="info-icon">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Attendance Reminder
+                    </h3>
+
+                    <p>
+                        Regular attendance helps you stay up to date
+                        with your classes and maintain your academic progress.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="student-attendance.js"></script>
+
+</body>
+
+</html>
