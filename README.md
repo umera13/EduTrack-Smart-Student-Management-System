@@ -26,33 +26,12 @@ The Admin can manage student information, courses, attendance and fees, while st
 - 🔐 Admin Login
 - 👤 Dynamic Admin Name
 - 📊 Admin Dashboard
-- 🎓 Student Management
-- ➕ Add Student
-- ✏️ Update Student
-- 🗑️ Delete Student
-- 🔎 Search Students
-- 📚 Course Management
-- ➕ Add Course
-- ✏️ Update Course
-- 🗑️ Delete Course
-- 📅 Attendance Management
-- ✅ Mark Student Attendance
-- ✏️ Update Attendance
-- 🗑️ Delete Attendance
-- 🔍 Search Attendance
-- 📆 Date-wise Attendance
-- 🚫 Duplicate Attendance Prevention
-- 💰 Fee Management
-- ➕ Add Fee Record
-- ✏️ Update Fee Record
-- 🗑️ Delete Fee Record
-- 🔎 Search Fee Details
-- 💵 Automatic Remaining Fee Calculation
-- 📈 Payment Status Tracking
+- 🎓 Student Management (Add / Update / Delete / Search)
+- 📚 Course Management (Add / Update / Delete)
+- 📅 Attendance Management (Mark / Update / Delete / Search / Date-wise, Duplicate Prevention)
+- 💰 Fee Management (Add / Update / Delete / Search, Automatic Remaining Fee Calculation, Payment Status Tracking)
 - 🔄 Refresh Functionality
 - 🚪 Admin Logout
-
----
 
 ### 🎓 Student Portal
 
@@ -60,14 +39,8 @@ The Admin can manage student information, courses, attendance and fees, while st
 - 👤 Dynamic Student Information
 - 🏠 Student Dashboard
 - 📋 My Profile
-- 📅 Attendance Details
-- 📊 Attendance Percentage
-- ✅ Present Days
-- ❌ Absent Days
-- 📆 Attendance History
-- 💰 Fee Details
-- 💵 Paid Fee
-- 🧾 Remaining Fee
+- 📅 Attendance Details (Percentage, Present/Absent Days, History)
+- 💰 Fee Details (Paid Fee, Remaining Fee)
 - 📚 Course Information
 - 🚪 Student Logout
 - 🔄 Dynamic data based on logged-in student
@@ -77,7 +50,6 @@ The Admin can manage student information, courses, attendance and fees, while st
 ## 🛠️ Technologies Used
 
 ### Backend
-
 - ☕ Java
 - 🌱 Spring Boot
 - 🌱 Spring Data JPA
@@ -88,7 +60,6 @@ The Admin can manage student information, courses, attendance and fees, while st
 - 📦 Maven
 
 ### Frontend
-
 - 🌐 HTML5
 - 🎨 CSS3
 - ⚡ JavaScript
@@ -97,7 +68,6 @@ The Admin can manage student information, courses, attendance and fees, while st
 - 🔤 Google Fonts
 
 ### Development Tools
-
 - 💻 Eclipse IDE
 - 🗄️ MySQL Workbench
 - 🧪 Postman
@@ -108,413 +78,275 @@ The Admin can manage student information, courses, attendance and fees, while st
 
 ## 🏗️ Project Architecture
 
-The project follows a layered architecture:
-
-```text
+```
 Frontend
-   │
-   │ HTTP Requests
+   │  HTTP Requests
    ▼
 Spring Boot REST Controllers
-   │
    ▼
 Service Layer
-   │
    ▼
 Repository Layer
-   │
    ▼
 Hibernate / JPA
-   │
    ▼
 MySQL Database
+```
 
+---
 
-📂 Project Structure
+## 📂 Project Structure
+
+```
 EduTrack-Student-Management-System/
 │
 ├── backend/
-│   │
 │   ├── src/
 │   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   └── com/
-│   │   │   │       └── edutrack/
-│   │   │   │           └── studentmanagement/
-│   │   │   │
-│   │   │   │               ├── authentication/
-│   │   │   │               │   ├── Admin.java
-│   │   │   │               │   ├── AdminController.java
-│   │   │   │               │   ├── AdminRepository.java
-│   │   │   │               │   ├── AdminService.java
-│   │   │   │               │
-│   │   │   │               ├── attendance/
-│   │   │   │               │   ├── Attendance.java
-│   │   │   │               │   ├── AttendanceController.java
-│   │   │   │               │   ├── AttendanceRepository.java
-│   │   │   │               │   └── AttendanceService.java
-│   │   │   │               │
-│   │   │   │               ├── controller/
-│   │   │   │               │   └── StudentController.java
-│   │   │   │               │
-│   │   │   │               ├── entity/
-│   │   │   │               │   └── Student.java
-│   │   │   │               │
-│   │   │   │               ├── fee/
-│   │   │   │               │   ├── Fee.java
-│   │   │   │               │   ├── FeeController.java
-│   │   │   │               │   ├── FeeRepository.java
-│   │   │   │               │   └── FeeService.java
-│   │   │   │               │
-│   │   │   │               ├── repository/
-│   │   │   │               │   └── StudentRepository.java
-│   │   │   │               │
-│   │   │   │               ├── service/
-│   │   │   │               │   └── StudentService.java
-│   │   │   │               │
-│   │   │   │               └── studentauth/
-│   │   │   │                   ├── StudentLoginController.java
-│   │   │   │                   └── StudentLoginRequest.java
-│   │   │   │
+│   │   │   ├── java/com/edutrack/studentmanagement/
+│   │   │   │   ├── authentication/   (Admin.java, AdminController, AdminRepository, AdminService)
+│   │   │   │   ├── attendance/       (Attendance.java, AttendanceController, AttendanceRepository, AttendanceService)
+│   │   │   │   ├── controller/       (StudentController.java)
+│   │   │   │   ├── entity/           (Student.java)
+│   │   │   │   ├── fee/              (Fee.java, FeeController, FeeRepository, FeeService)
+│   │   │   │   ├── repository/       (StudentRepository.java)
+│   │   │   │   ├── service/          (StudentService.java)
+│   │   │   │   └── studentauth/      (StudentLoginController, StudentLoginRequest)
 │   │   │   └── resources/
 │   │   │       └── application.properties
-│   │   │
 │   │   └── test/
-│   │
 │   └── pom.xml
 │
 ├── frontend/
-│   │
-│   ├── admin-login.html
-│   ├── admin-login.css
-│   ├── admin-login.js
-│   │
-│   ├── dashboard.html
-│   ├── dashboard.css
-│   ├── dashboard.js
-│   │
-│   ├── student.html
-│   ├── student.css
-│   ├── student.js
-│   │
-│   ├── course.html
-│   ├── course.css
-│   ├── course.js
-│   │
-│   ├── attendance.html
-│   ├── attendance.css
-│   ├── attendance.js
-│   │
-│   ├── fee.html
-│   ├── fee.css
-│   ├── fee.js
-│   │
-│   ├── student-login.html
-│   ├── student-login.css
-│   ├── student-login.js
-│   │
-│   ├── student-dashboard.html
-│   ├── student-dashboard.css
-│   ├── student-dashboard.js
-│   │
-│   ├── student-profile.html
-│   ├── student-profile.css
-│   ├── student-profile.js
-│   │
-│   ├── student-attendance.html
-│   ├── student-attendance.css
-│   ├── student-attendance.js
-│   │
-│   ├── student-fee.html
-│   ├── student-fee.css
-│   └── student-fee.js
+│   ├── admin-login.html / .css / .js
+│   ├── dashboard.html / .css / .js
+│   ├── student.html / .css / .js
+│   ├── course.html / .css / .js
+│   ├── attendance.html / .css / .js
+│   ├── fee.html / .css / .js
+│   ├── student-login.html / .css / .js
+│   ├── student-dashboard.html / .css / .js
+│   ├── student-profile.html / .css / .js
+│   ├── student-attendance.html / .css / .js
+│   └── student-fee.html / .css / .js
 │
 └── README.md
+```
 
-The exact folder names may vary depending on the final project organization.
+*The exact folder names may vary depending on the final project organization.*
 
-🗄️ Database
+---
 
-The application uses MySQL as the relational database.
+## 🗄️ Database
 
-Main Tables
-admin
-student
-course
-attendance
-fees
-Student Table
+The application uses **MySQL** as the relational database.
 
-Stores:
+**Main Tables:** `admin`, `student`, `course`, `attendance`, `fees`
 
-Student ID
-Name
-Email
-Course
-Fee
-Password
-Course Table
+| Table | Stores |
+|---|---|
+| Student | Student ID, Name, Email, Course, Fee, Password |
+| Course | Course ID, Course Name, Course Fee |
+| Attendance | Attendance ID, Student ID, Date, Status |
+| Fee | Fee ID, Student ID, Student Name, Course, Total Fee, Paid Amount, Remaining Amount, Payment Status |
+| Admin | Admin ID, Admin Name, Email, Password |
 
-Stores:
+---
 
-Course ID
-Course Name
-Course Fee
-Attendance Table
+## 🔐 Authentication
 
-Stores:
+EduTrack provides separate login systems for Admin and Student.
 
-Attendance ID
-Student ID
-Attendance Date
-Attendance Status
-Fee Table
-
-Stores:
-
-Fee ID
-Student ID
-Student Name
-Course
-Total Fee
-Paid Amount
-Remaining Amount
-Payment Status
-Admin Table
-
-Stores:
-
-Admin ID
-Admin Name
-Email
-Password
-🔐 Authentication
-
-EduTrack provides separate login systems.
-
-Admin Login
-Admin
-  ↓
-Admin Login
-  ↓
-Spring Boot REST API
-  ↓
-Database Verification
-  ↓
-Admin Dashboard
-Student Login
-Student
-  ↓
-Student Login
-  ↓
-Spring Boot REST API
-  ↓
-Database Verification
-  ↓
-Student Dashboard
+```
+Admin Login → Spring Boot REST API → Database Verification → Admin Dashboard
+Student Login → Spring Boot REST API → Database Verification → Student Dashboard
+```
 
 After successful login, the logged-in user's information is stored on the frontend and used to display dynamic data.
 
-📊 Admin Dashboard
+---
 
-The Admin Dashboard displays dynamically generated information such as:
+## 📊 Admin Dashboard
 
-👥 Total Students
-📚 Total Courses
-✅ Present Students
-❌ Absent Students
-📈 Attendance Chart
-🧑‍🎓 Recent Students
-📅 Recent Attendance
-💰 Recent Fee Records
+Displays dynamically generated information such as:
+- 👥 Total Students
+- 📚 Total Courses
+- ✅ Present Students / ❌ Absent Students
+- 📈 Attendance Chart
+- 🧑‍🎓 Recent Students
+- 📅 Recent Attendance
+- 💰 Recent Fee Records
 
 The dashboard retrieves information from the Spring Boot REST APIs instead of using static data.
 
-📅 Attendance Management
+---
 
-The attendance module allows the Admin to:
+## 📅 Attendance Management
 
-Mark attendance
-Update attendance
-Delete attendance
-Search by student
-Search by date
-View attendance history
-Duplicate Prevention
+The Admin can mark, update, delete, and search attendance by student or date, and view attendance history.
 
-The system prevents multiple attendance records for the same:
+**Duplicate Prevention:** the system prevents multiple attendance records for the same Student + Date combination (e.g. Student ID 6 on 2026-08-08 can have only one record), preventing accidental duplicate entries.
 
-Student + Date
+---
 
-For example:
-
-Student ID: 6
-Date: 2026-08-08
-
-Only one attendance record should exist for this combination.
-
-This prevents accidental duplicate attendance entries.
-
-💰 Fee Management
+## 💰 Fee Management
 
 The fee module automatically calculates:
 
+```
 Remaining Fee = Total Fee - Paid Amount
+```
 
-The payment status is determined automatically:
-
-Paid
-Pending
-Partial
+Payment status is determined automatically as **Paid**, **Pending**, or **Partial**.
 
 Example:
-
+```
 Total Fee     = ₹50,000
 Paid Amount   = ₹45,000
 Remaining Fee = ₹5,000
 Status        = Partial
-🎨 User Interface
+```
 
-The application uses a clean and modern interface with:
+---
 
-Responsive layouts
-Sidebar navigation
-Dashboard cards
-Tables
-Forms
-Search functionality
-Status badges
-Action buttons
-Font Awesome icons
-Google Fonts
-Charts
+## 🎨 User Interface
+
+- Responsive layouts
+- Sidebar navigation
+- Dashboard cards & tables
+- Forms with search functionality
+- Status badges & action buttons
+- Font Awesome icons, Google Fonts, Charts
 
 The Admin and Student dashboards use separate interfaces based on their respective roles.
 
-🔗 REST API Endpoints
-Student APIs
+---
+
+## 📸 Application Screens
+
+### Admin Portal
+![Admin Login](screenshots/Admin%20Login.png)
+![Admin Dashboard](screenshots/AdminDashboard.png)
+![Student Management](screenshots/StudentManagement.png)
+![Course Management](screenshots/CourseManagement.png)
+![Attendance Management](screenshots/attendanceManage.png)
+![Fee Management](screenshots/FeeManage.png)
+
+### Student Portal
+![Student Login](screenshots/StudentLogin.png)
+![Student Dashboard](screenshots/StudentDasshboard.png)
+![Student Profile](screenshots/StudentProf.png)
+![Student Attendance](screenshots/StudentAttendance.png)
+![Student Fee Details](screenshots/FeeDetails.png)
+
+---
+
+## 🔗 REST API Endpoints
+
+**Student APIs**
+```
 GET     /students
 GET     /students/{id}
 POST    /students/save
 PUT     /students/update
 DELETE  /students/delete/{id}
 GET     /students/count
-Student Authentication
+```
+
+**Student Authentication**
+```
 POST    /student/login
-Attendance APIs
+```
+
+**Attendance APIs**
+```
 GET     /attendance
 GET     /attendance/{id}
 POST    /attendance/save
 PUT     /attendance/update
 DELETE  /attendance/delete/{id}
-
 GET     /attendance/student/{studentId}
 GET     /attendance/date/{date}
 GET     /attendance/student/{studentId}/date/{date}
-
 GET     /attendance/present/count
 GET     /attendance/absent/count
-Fee APIs
+```
+
+**Fee APIs**
+```
 GET     /fees
 GET     /fees/{id}
 POST    /fees/save
 PUT     /fees/update
 DELETE  /fees/delete/{id}
-
 GET     /fees/student/{studentId}
-Admin Authentication
+```
+
+**Admin Authentication**
+```
 POST    /admin/login
-⚙️ Setup & Installation
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/EduTrack-Student-Management-System.git
+```
 
-Move into the project:
+---
 
+## ⚙️ Setup & Installation
+
+**1️⃣ Clone the Repository**
+```bash
+git clone https://github.com/umera13/EduTrack-Student-Management-System.git
 cd EduTrack-Student-Management-System
-2️⃣ Configure MySQL
+```
+
+**2️⃣ Configure MySQL**
 
 Create a database in MySQL:
-
+```sql
 CREATE DATABASE edutrack;
+```
 
-Update your Spring Boot configuration in:
-
-application.properties
-
-Example:
-
+Update your Spring Boot configuration in `application.properties`:
+```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/edutrack
 spring.datasource.username=root
 spring.datasource.password=YOUR_PASSWORD
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+```
+Replace `YOUR_PASSWORD` with your MySQL password.
 
-Replace:
+**3️⃣ Run the Spring Boot Application**
 
-YOUR_PASSWORD
-
-with your MySQL password.
-
-3️⃣ Run the Spring Boot Application
-
-Open the backend project in:
-
-Eclipse
-IntelliJ IDEA
-Spring Tool Suite
-
-Run the main Spring Boot application.
-
-The backend should start at:
-
+Open the backend project in Eclipse / IntelliJ IDEA / Spring Tool Suite and run the main Spring Boot application. The backend starts at:
+```
 http://localhost:8080
-4️⃣ Run the Frontend
+```
 
-Open the frontend files using a local development server.
+**4️⃣ Run the Frontend**
 
-For example, using VS Code Live Server:
+Open the frontend files using a local development server (e.g. VS Code Live Server: right-click → Open with Live Server), then open `admin-login.html` or `student-login.html`.
 
-Right Click → Open with Live Server
+---
 
-Then open:
+## 🔑 Login Flow
 
-admin-login.html
+**Admin:** Admin Login → Admin Authentication → Admin Dashboard → Student / Course / Attendance / Fee Management
 
-or
+**Student:** Student Login → Student Authentication → Student Dashboard → Profile / Attendance / Fee Details
 
-student-login.html
-🔑 Login Flow
-Admin
-Admin Login
-     ↓
-Admin Authentication
-     ↓
-Admin Dashboard
-     ↓
-Student / Course / Attendance / Fee Management
-Student
-Student Login
-     ↓
-Student Authentication
-     ↓
-Student Dashboard
-     ↓
-Profile / Attendance / Fee Details
-🧪 Testing
+---
 
-The REST APIs can be tested using tools such as:
+## 🧪 Testing
 
-Postman
-Browser
-Frontend application
+The REST APIs can be tested using Postman, a browser, or the frontend application.
 
 Example:
-
+```
 GET http://localhost:8080/students
+```
 
 Example response:
-
+```json
 [
     {
         "id": 1,
@@ -524,44 +356,37 @@ Example response:
         "fee": 50000
     }
 ]
-🚀 Future Improvements
+```
 
-The current project can be extended with:
+---
 
-🔐 Spring Security
-🔑 Password encryption using BCrypt
-🎫 JWT Authentication
-👥 Role-based authorization
-📧 Email notifications
-📱 Better mobile responsiveness
-📄 PDF report generation
-📊 Advanced analytics
-🔎 Advanced search and filtering
-📈 Student performance reports
-🗓️ Timetable management
-📢 Student notifications
-☁️ Cloud deployment
-🐳 Docker support
-🎯 Learning Outcomes
+## 🚀 Future Improvements
+
+- 🔐 Spring Security
+- 🔑 Password encryption using BCrypt
+- 🎫 JWT Authentication
+- 👥 Role-based authorization
+- 📧 Email notifications
+- 📱 Better mobile responsiveness
+- 📄 PDF report generation
+- 📊 Advanced analytics
+- 🔎 Advanced search and filtering
+- 📈 Student performance reports
+- 🗓️ Timetable management
+- 📢 Student notifications
+- ☁️ Cloud deployment
+- 🐳 Docker support
+
+---
+
+## 🎯 Learning Outcomes
 
 Through this project, the following concepts were practiced:
-
-Java
-Spring Boot
-REST API development
-Spring Data JPA
-Hibernate
-CRUD operations
-MySQL database integration
-Entity mapping
-Repository pattern
-Service layer
-Controller layer
-API integration
-JavaScript Fetch API
-Dynamic frontend rendering
-Form validation
-Authentication
-Local Storage
-MVC architecture
-Git and GitHub
+- Java, Spring Boot, REST API development
+- Spring Data JPA, Hibernate, Entity mapping
+- CRUD operations, MySQL database integration
+- Repository pattern, Service layer, Controller layer
+- JavaScript Fetch API, Dynamic frontend rendering, Form validation
+- Authentication, Local Storage
+- MVC architecture
+- Git and GitHub
